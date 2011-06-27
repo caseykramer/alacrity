@@ -1,0 +1,5 @@
+package alacrity
+
+trait Message {
+
+}
