@@ -1,12 +1,10 @@
 package alacrity
 
-object Bus {
-  def publish[TMessage <: Message](message:TMessage) {
-  }
+trait IBus {
 
-  def subscribe[TMessage <: Message](handler:Handler[TMessage]) {
-  }
+  def publish(message:Message)
 
-  def subscribe[TMessage <: Message](handler:(TMessage) => Unit) {
-  }
+  def subscribe(handler:Handler[Message])
+
+  def subscribe(handler:(Message) => Unit)
 }

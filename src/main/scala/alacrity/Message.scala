@@ -1,5 +1,3 @@
 package alacrity
 
-trait Message {
-
-}
+trait Message
