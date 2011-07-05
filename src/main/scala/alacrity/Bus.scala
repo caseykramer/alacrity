@@ -2,9 +2,9 @@ package alacrity
 
 trait IBus {
 
-  def publish(message:Message)
+  def publish[T <: Message](message:T)(implicit m:Manifest[T])
 
-  def subscribe(handler:Handler[Message])
+  def subscribe[T <: Message](handler:Handler[T])(implicit m:Manifest[T])
 
-  def subscribe(handler:(Message) => Unit)
+  def subscribe[T <: Message](handler:(T) => Unit)(implicit m:Manifest[T])
 }
